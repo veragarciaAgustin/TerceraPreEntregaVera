@@ -1,0 +1,25 @@
+{% extends 'pagina/base.html' %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <label for="nombre_producto">Buscar Producto:</label>
+    <input type="text" name="nombre_producto" id="nombre_producto" placeholder="Nombre del producto">
+    <button type="submit">Buscar Producto</button>
+</form>
+
+<form method="post">
+    {% csrf_token %}
+    <label for="nombre_cliente">Buscar Cliente:</label>
+    <input type="text" name="nombre_cliente" id="nombre_cliente" placeholder="Nombre del cliente">
+    <button type="submit">Buscar Cliente</button>
+</form>
+
+<form method="post">
+    {% csrf_token %}
+    <label for="nombre_empleado">Buscar Empleado:</label>
+    <input type="text" name="nombre_empleado" id="nombre_empleado" placeholder="Nombre del empleado">
+    <button type="submit">Buscar Empleado</button>
+</form>
+{% endblock content %}

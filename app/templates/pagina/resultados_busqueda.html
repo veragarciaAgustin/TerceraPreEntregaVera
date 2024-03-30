@@ -1,0 +1,40 @@
+{% extends 'pagina/base.html' %}
+
+{% block content %}
+
+<h2>Resultados de la búsqueda</h2>
+
+{% if productos %}
+    <h3>Productos</h3>
+    <ul>
+        {% for producto in productos %}
+            <li>{{ producto.nombre }} - {{ producto.precio }} - {{ producto.marca }}</li>
+        {% empty %}
+            <li>No se encontraron productos</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if clientes %}
+    <h3>Clientes</h3>
+    <ul>
+        {% for cliente in clientes %}
+            <li>{{ cliente.nombre }} - {{ cliente.email }}</li>
+        {% empty %}
+            <li>No se encontraron clientes</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if empleados %}
+    <h3>Empleados</h3>
+    <ul>
+        {% for empleado in empleados %}
+            <li>{{ empleado.nombre }} - {{ empleado.puesto }} - {{ empleado.fechaDeIngreso }}</li>
+        {% empty %}
+            <li>No se encontraron empleados</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% endblock content %}
